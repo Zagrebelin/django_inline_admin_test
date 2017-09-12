@@ -9,7 +9,7 @@ class Person(models.Model):
         return self.name
 
 
-class Something(models.Model):
+class Company(models.Model):
     title = models.TextField()
 
     def __str__(self):
@@ -19,7 +19,7 @@ class Something(models.Model):
 class Departament(models.Model):
     title = models.CharField(max_length=20)
     boss = models.ForeignKey(Person, related_name='xxx', blank=True, null=True)
-    something = models.ForeignKey(Something)
+    something = models.ForeignKey(Company)
 
     def __str__(self):
         return self.title

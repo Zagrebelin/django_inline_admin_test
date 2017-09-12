@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib import admin
 
-from .models import Person, Departament, Something
+from .models import Person, Departament, Company
 
 
 # code stolen here: https://stackoverflow.com/a/19556353
@@ -25,6 +25,6 @@ class PersonInlineAdmin(admin.TabularInline):
     model = Person
 
 
-admin.site.register(Something, inlines=[DepartamentInlineAdmin])
+admin.site.register(Company, inlines=[DepartamentInlineAdmin])
 admin.site.register(Departament, inlines=[PersonInlineAdmin], form=DepartamentAdminForm)
 admin.site.register(Person)
