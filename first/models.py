@@ -13,12 +13,11 @@ class Company(models.Model):
     title = models.TextField()
 
     def __str__(self):
-        return self.name
+        return self.title
 
 
 class Departament(models.Model):
     title = models.CharField(max_length=20)
-    boss = models.ForeignKey(Person, related_name='xxx', blank=True, null=True)
     company = models.ForeignKey(Company)
 
     def __str__(self):
