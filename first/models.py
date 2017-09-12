@@ -19,7 +19,7 @@ class Company(models.Model):
 class Departament(models.Model):
     title = models.CharField(max_length=20)
     boss = models.ForeignKey(Person, related_name='xxx', blank=True, null=True)
-    something = models.ForeignKey(Company)
+    company = models.ForeignKey(Company)
 
     def __str__(self):
         return self.title
